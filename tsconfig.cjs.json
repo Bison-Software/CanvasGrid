@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "outDir": "dist-cjs",
+    "target": "ES2021",
+    "moduleResolution": "Node",
+    "declaration": false,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}

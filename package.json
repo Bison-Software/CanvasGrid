@@ -1,0 +1,38 @@
+{
+  "name": "canvas-grid",
+  "version": "0.1.19",
+  "description": "Canvas testing via grid overlay + pixel sampling (Playwright-first).",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p tsconfig.json",
+  "build:cjs": "tsc -p tsconfig.cjs.json && npm run fix-cjs-imports && mkdir -p dist && cp dist-cjs/CanvasGrid.js dist/CanvasGrid.cjs && cp dist-cjs/ColorSampler.js dist/ColorSampler.cjs && cp dist-cjs/GridOverlay.js dist/GridOverlay.cjs && cp dist-cjs/GridScanner.js dist/GridScanner.cjs && cp dist-cjs/MouseInteractions.js dist/MouseInteractions.cjs && cp dist-cjs/TooltipDetector.js dist/TooltipDetector.cjs && cp dist-cjs/index.js dist/index.cjs",
+    "fix-cjs-imports": "find dist-cjs -name '*.js' -exec sed -i 's|require(\"\\./\\([^/\"]*\\)\\.js\")|require(\"./\\1.cjs\")|g' {} \\;",
+    "prepublishOnly": "npm run clean && npm run build",
+    "prepare": "npm run build",
+    "clean": "rm -rf dist dist-cjs",
+    "test": "npm run test:unit",
+    "test:unit": "vitest",
+    "test:watch": "vitest --watch"
+  },
+  "peerDependencies": {
+    "@playwright/test": ">=1.44.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.0.0"
+  },
+  "license": "MIT"
+}

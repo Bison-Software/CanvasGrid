@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Grid Chess Board Coordinates Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            margin: 20px;
+        }
+        .controls {
+            margin: 20px 0;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Grid - Chess Board Style Coordinates</h1>
+    <p>This test shows the grid overlay with coordinates positioned outside the cells, similar to a chess board.</p>
+
+    <div class="controls">
+        <button onclick="attachGrid()">Attach Grid</button>
+        <button onclick="detachGrid()">Detach Grid</button>
+        <button onclick="toggleGrid()">Toggle Grid</button>
+    </div>
+
+    <canvas id="testCanvas" width="600" height="400"></canvas>
+
+    <script type="module">
+        // This is a simple HTML test - in a real Playwright test you'd do:
+        // import { test, expect } from '@playwright/test';
+        // import { CanvasGrid } from './dist/CanvasGrid.js';
+
+        console.log('Chess board style coordinates test loaded');
+        console.log('To test: Open this file in a browser and check that coordinates appear outside the grid cells');
+        console.log('Column numbers should appear above the grid, row numbers should appear to the left');
+    </script>
+</body>
+</html>

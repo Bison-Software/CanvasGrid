@@ -6,6 +6,15 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bison-Software/CanvasGrid.git"
+  },
+  "homepage": "https://github.com/Bison-Software/CanvasGrid#readme",
+  "bugs": {
+    "url": "https://github.com/Bison-Software/CanvasGrid/issues",
+    "email": "fonzi@users.noreply.github.com"
+  },
   "exports": {
     ".": {
       "import": "./dist/index.js",

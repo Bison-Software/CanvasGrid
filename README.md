@@ -2,11 +2,16 @@
 
 A Playwright-first library for testing HTML5 Canvas elements using a grid-based approach.
 
-## Installation
+
+## Dependencies
+
+This library requires [Playwright](https://playwright.dev/) as a peer dependency:
 
 ```bash
-npm install /path/to/canvas-grid-0.1.2.tgz
+npm install @playwright/test
 ```
+
+You must have Playwright installed in your project to use CanvasGrid.
 
 ## Basic Usage
 
@@ -535,6 +540,12 @@ CanvasGrid.within(color, [255, 0, 0, 255], 0)
 CanvasGrid.within(color, [255, 0, 0, 255]) // Uses default tolerance
 CanvasGrid.within(color, [250, 5, 5, 250], 15) // Custom tolerance
 ```
+
+## License
+
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
+
+See LICENSE for details.
 
 ## Error Handling
 

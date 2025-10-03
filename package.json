@@ -1,6 +1,6 @@
 {
   "name": "@bisonsoftware/canvas-grid-playwright",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Canvas testing via grid overlay + pixel sampling (Playwright-first).",
   "type": "module",
   "main": "dist/index.cjs",
@@ -43,5 +43,5 @@
     "typescript": "^5.4.0",
     "vitest": "^1.0.0"
   },
-  "license": "MIT"
+  "license": "GPL-3.0-only"
 }

@@ -13,6 +13,8 @@ npm install @playwright/test
 
 You must have Playwright installed in your project to use CanvasGrid.
 
+## Note this whole library is still experimental.
+
 ## Basic Usage
 
 ```typescript

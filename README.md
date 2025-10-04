@@ -69,10 +69,6 @@ test('canvas testing example', async ({ page }) => {
 - `.hasAnyTooltips(options?)` - Quick check if any DOM tooltips exist
 - `.scanWithTextExtraction(options?)` - Enhanced scan for DOM tooltips
 
-#### Color Sampling
-- `.sampleCell(col, row)` - Get RGBA color from cell center
-- `CanvasGrid.within(actual, expected, tolerance?)` - Compare colors with tolerance
-
 #### Overlay Control
 - `.interactive(boolean)` - Enable/disable overlay mouse events
 - `.toggleOverlay(boolean)` - Show/hide overlay visibility

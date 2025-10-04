@@ -1,7 +1,7 @@
 {
   "name": "@bisonsoftware/canvas-grid-playwright",
-  "version": "0.2.4",
-  "description": "Canvas testing via grid overlay + pixel sampling (Playwright-first).",
+  "version": "0.2.6",
+  "description": "Canvas testing via grid overlay (Playwright-first).",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",

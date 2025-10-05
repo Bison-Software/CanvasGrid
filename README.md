@@ -19,7 +19,7 @@ You must have Playwright installed in your project to use CanvasGrid.
 
 ```typescript
 import { test, expect } from '@playwright/test';
-import { CanvasGrid } from 'canvas-grid';
+import {CanvasGrid} from "@bisonsoftware/canvas-grid-playwright";
 
 test('canvas testing example', async ({ page }) => {
   await page.goto('https://your-canvas-app.com');
@@ -34,12 +34,6 @@ test('canvas testing example', async ({ page }) => {
   // Interact with canvas
   await grid.clickCell(5, 4);
   await grid.hoverCell(3, 2);
-  
-  // Sample color from a cell
-  const color = await grid.sampleCell(5, 4);
-  
-  // Assert color (with tolerance)
-  expect(CanvasGrid.within(color, [255, 0, 0, 255], 12)).toBe(true);
 });
 ```
 

@@ -275,4 +275,6 @@ export declare class CanvasGrid {
     }>;
     /** expose grid for callers */
     get grid(): Grid;
+    /** Detach the grid overlay from the canvas */
+    detach(): Promise<this>;
 }

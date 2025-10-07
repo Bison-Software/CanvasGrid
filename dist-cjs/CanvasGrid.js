@@ -1,4 +1,18 @@
 "use strict";
+/*
+ * Copyright (C) 2025 Bison Software LLC
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CanvasGrid = void 0;
 const GridOverlay_js_1 = require("./GridOverlay.cjs");
@@ -176,5 +190,21 @@ class CanvasGrid {
     }
     /** expose grid for callers */
     get grid() { return this._grid; }
+    /** Detach the grid overlay from the canvas */
+    async detach() {
+        const canvas = await this.canvas();
+        // Remove overlay by id
+        await this.page.evaluate((overlayId) => {
+            const overlay = document.getElementById(overlayId);
+            if (overlay && overlay.parentNode) {
+                // Call cleanup if present
+                if (typeof overlay.__cleanup === 'function') {
+                    overlay.__cleanup();
+                }
+                overlay.parentNode.removeChild(overlay);
+            }
+        }, this._overlayId);
+        return this;
+    }
 }
 exports.CanvasGrid = CanvasGrid;

@@ -291,4 +291,21 @@ export class CanvasGrid {
 
     /** expose grid for callers */
     get grid() { return this._grid; }
+
+    /** Detach the grid overlay from the canvas */
+    async detach() {
+        const canvas = await this.canvas();
+        // Remove overlay by id
+        await this.page.evaluate((overlayId) => {
+            const overlay = document.getElementById(overlayId);
+            if (overlay && overlay.parentNode) {
+                // Call cleanup if present
+                if (typeof (overlay as any).__cleanup === 'function') {
+                    (overlay as any).__cleanup();
+                }
+                overlay.parentNode.removeChild(overlay);
+            }
+        }, this._overlayId);
+        return this;
+    }
 }
